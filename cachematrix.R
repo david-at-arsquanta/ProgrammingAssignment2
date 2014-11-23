@@ -1,5 +1,5 @@
-## So, this is my Cache making function
-# . . I hope. 
+
+## So, this is my Cache making function... I hope. 
 #
 #Credit where credit is due: As you will no doubt see it is largely based on the Vector Mean examples, 
 #but with different objects and processes.  I also got a lot of mileage out 
@@ -42,3 +42,4 @@ cacheSolve <- function(x, ...) {	# x is object made by makeCacheMatrix
 
 
 }
+# that's all folks
