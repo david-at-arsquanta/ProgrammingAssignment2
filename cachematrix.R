@@ -1,18 +1,48 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-# ok then. . .
-# this is a test of the gimpy WISIWIG GItHub interface. . . 
 
-## Write a short comment describing this function
+## So, this is my Cache making function
+# . . I hope. 
+#
+# As you will no doubt see it is larrgely based on the Vector Mean examples, 
+#but with different onjects and processes
+#
+
+
+#The makeCacheMatrix function will (hopefully) provide the back end necessary 
+# to run the cacheSolve function
 
 makeCacheMatrix <- function(x = matrix()) {
 
+        i <- NULL 							# create empty placeholder variable
+        set <- function(y) {				# nested function
+                x <<- y						# set variable internal to function (search in function first)	
+                i <<- NULL					# ""
+        }
+        get <- function() {x}								# returns value of original matrix
+        setinverse <- function(inverse) {i <<- inverse}		# called to access and store the inverse value
+        getinverse <- function() {i}							# will return the cashed value when accessed later
+        list(set = set, get = get,							# access list for when makeCacheMatrix is called
+             setinverse = setinverse,
+             getinverse = getinverse)
 }
 
 
-## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+
+
+#The cacheSolve function will (hopefully) Return a matrix that is the inverse of 'x' cache the value 
+# and return it from the cache without re-calculating it if an idetical request is made
+
+cacheSolve <- function(x, ...) {	# x is object made by makeCacheMatrix    
+        i <- x$getinverse()			#  accesses the object 'x' and gets the value of the inverse
+        if(!is.null(i)) {			# if inverse was already cached (not NULL)
+                message("getting cached data")
+                return(i)
+        }
+        data <- x$get()				# this is run only if x$getinverse() returned NULL
+        i <- solve(data, ...)		# calcualtes the inverse (the first time)
+        x$setinverse(i)				# stores inverse matrix in "i"
+        i							# returns value of i
+
+
 }
