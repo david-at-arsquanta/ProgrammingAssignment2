@@ -1,5 +1,3 @@
-
-
 ## So, this is my Cache making function
 # . . I hope. 
 #
