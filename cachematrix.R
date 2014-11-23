@@ -3,10 +3,11 @@
 ## So, this is my Cache making function
 # . . I hope. 
 #
-# As you will no doubt see it is larrgely based on the Vector Mean examples, 
-#but with different onjects and processes
-#
-
+#Credit where credit is due: As you will no doubt see it is largely based on the Vector Mean examples, 
+#but with different objects and processes.  I also got a lot of mileage out 
+#of the example/tutorial Bill Hilton posted on the class forum -- thanks Bill! 
+#That said, any mistakes made are mine and mine alone ;)
+# 
 
 #The makeCacheMatrix function will (hopefully) provide the back end necessary 
 # to run the cacheSolve function
